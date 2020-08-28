@@ -49,7 +49,7 @@ def _get_examples_share(examples, training_split):
     return np.split(examples, [len_training_examples])
 
 def _write_tfrecord(examples, output_filename):
-    writer = tf.python_io.TFRecordWriter(output_filename)
+    writer = tf.io.TFRecordWriter(output_filename)
     for example in tqdm(examples):
         try:
             image = _load_image(example['path'])
